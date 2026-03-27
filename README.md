@@ -1,42 +1,130 @@
-# 📊 Data Warehouse and Analytics Project
+# 📊 Data Warehouse & Analytics Project
 
-Welcome to the **Data Warehouse and Analytics Project** repository! 🚀
+A modern **Data Warehouse and Analytics solution** built using SQL Server, following industry best practices in data engineering and analytics.
 
-This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. Designed as a portfolio project, it highlights industry best practices in data engineering and analytics.
-
----
-
-## 🚀 Project Requirements
-
-### 🏗 Building the Data Warehouse (Data Engineering)
-
-#### 🎯 Objective
-Develop a modern data warehouse using **SQL Server** to consolidate sales data, enabling analytical reporting and informed decision-making.
-
-#### 📌 Specifications
-
-- **Data Sources:** Import data from two source systems (ERP and CRM) provided as CSV files.
-- **Data Quality:** Cleanse and resolve data quality issues prior to analysis.
-- **Integration:** Combine both sources into a single, user-friendly data model designed for analytical queries.
-- **Scope:** Focus on the latest dataset only; historization of data is not required.
-- **Documentation:** Provide clear documentation of the data model to support both business stakeholders and analytics teams.
+This project demonstrates how to transform raw data into **business-ready insights** using a structured architecture.
 
 ---
 
-### 📈 BI: Analytics & Reporting (Data Analytics)
+## 🚀 Overview
 
-#### 🎯 Objective
-Develop SQL-based analytics to deliver detailed insights into:
+This project covers the full data lifecycle:
 
-- **Customer Behavior**
-- **Product Performance**
-- **Sales Trends**
+* Data ingestion from multiple sources
+* Data cleaning and transformation
+* Data modeling for analytics
+* Generating business insights
 
-These insights empower stakeholders with key business metrics, enabling strategic decision-making.
+---
+
+## 🏗 Architecture
+
+The solution follows the **Medallion Architecture**:
+
+```
+Sources → Bronze → Silver → Gold → BI / Analytics
+```
+
+### Layers:
+
+* **Bronze Layer**
+
+  * Stores raw data as-is from source systems
+  * No transformations applied
+
+* **Silver Layer**
+
+  * Data cleaning and standardization
+  * Handling missing values, duplicates, formatting
+  * Creating derived columns
+
+* **Gold Layer**
+
+  * Business-ready data
+  * Aggregations and business logic
+  * Optimized for reporting
+
+---
+
+## 📂 Data Sources
+
+* **ERP System** (CSV Files)
+* **CRM System** (CSV Files)
+
+---
+
+## ⚙️ Data Engineering
+
+### Key Features:
+
+* Batch data processing
+* Full load strategy (Truncate & Insert)
+* Data cleansing and normalization
+* Data integration across systems
+
+---
+
+## 📊 Data Modeling
+
+The Gold Layer is designed using:
+
+* **Star Schema**
+* **Fact Tables** (e.g., Sales)
+* **Dimension Tables** (e.g., Customers, Products)
+
+---
+
+## 📈 Analytics & Reporting
+
+The project enables insights into:
+
+* Customer behavior
+* Product performance
+* Sales trends
+
+Tools used:
+
+* SQL queries
+* BI tools (e.g., Power BI)
+
+---
+
+## 📁 Project Structure
+
+```
+/datasets
+    /source_erp
+    /source_crm
+
+/sql
+    /bronze
+    /silver
+    /gold
+
+/docs
+    data_model.md
+```
+
+---
+
+## 🎯 Objectives
+
+* Build a scalable data warehouse
+* Improve data quality
+* Create a unified data model
+* Enable data-driven decision-making
+
+---
+
+## 🛠 Tech Stack
+
+* SQL Server
+* T-SQL
+* CSV Files
+* Power BI (optional)
 
 ---
 
 ## 📜 License
 
-This project is licensed under the **MIT License**.  
-You are free to use, modify, and share this project with proper attribution.
+This project is licensed under the MIT License.
